@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="static/style.css">
-    <script defer src="static/app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/style.css">
+  <script defer src="static/app.js"></script>
 </head>
 <body>
-    
+  <div class="page-content m-3">
+    <div class="container w-50 border">
+      <div class="row">
+        <div class="col">
+          <h1>To-do List</h1>
+        <div>
+      <div>
+      <div class="row">
+        <div class="col">
+          <form class="form-inline" id="taskForm">
+            <div class="form-group col-10">
+              <label for="inputTask" class="sr-only">New Task</label>
+              <input type="text" class="form-control m-3 w-100" id="taskInput" placeholder="Add a new task">
+            </div>
+            <div class="form-group col-2">
+              <button type="submit" id="btnInput" class="btn btn-primary">Add</button>
+            <div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <hr/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ul class="list-group m-3" id="taskList"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
