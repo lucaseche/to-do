@@ -16,36 +16,35 @@ function addTask(e){
     // chequear por submit vacio
     if (taskInput.value === ''){
         alert('No podes agregar una tarea vacia');
-        return false; // por algun motivo el alert aparece dos veces # Consultar
     }
+    else{
+        // crear un li
+        const li = document.createElement('li');
+        
+        // agregar clases
+        li.className = 'list-group-item task-item';
+        
+        // agregar texto al li
+        li.appendChild(document.createTextNode(taskInput.value));
+        
+        // crear link para el boton eliminar
+        const link = document.createElement('a');
 
-    // crear un li
-    const li = document.createElement('li');
-    
-    // agregar clases
-    li.className = 'list-group-item task-item';
-    
-    // agregar texto al li
-    li.appendChild(document.createTextNode(taskInput.value));
-    
-    // crear link para el boton eliminar
-    const link = document.createElement('a');
+        // agregar clase al link
+        link.className = 'delete-item secondary-content';
+        
+        // agregar icono al link
+        link.innerHTML = '<i class="fa fa-remove"></i>';
+        
+        // agregar link al li
+        li.appendChild(link);
+        
+        // agregar li a la lista
+        taskList.appendChild(li);
 
-    // agregar clase al link
-    link.className = 'delete-item secondary-content';
-    
-    // agregar icono al link
-    link.innerHTML = '<i class="fa fa-remove"></i>';
-    
-    // agregar link al li
-    li.appendChild(link);
-    
-    // agregar li a la lista
-    taskList.appendChild(li);
-
-    // borrar texto del input
-    taskInput.value = '';
-
+        // borrar texto del input
+        taskInput.value = '';
+    }
     // prevenir compartiento por defecto del submit en el input 
     e.preventDefault();
 }
