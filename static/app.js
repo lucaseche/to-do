@@ -45,6 +45,12 @@ function addTask(e){
         // borrar texto del input
         taskInput.value = '';
     }
+
+    // si es la primera tarea, muestro el boton de eliminar todas las tareas
+    if(taskList.childElementCount === 1){
+        $('#clearBtn').show(200);
+    }
+
     // prevenir compartiento por defecto del submit en el input 
     e.preventDefault();
 }
@@ -59,6 +65,11 @@ function removeTask(e){
         // remuevo al "abuelo" del <i> que seria el <li>
         e.target.parentElement.parentElement.remove();
     }
+
+    // si es la ultima tarea, oculto el boton de eliminar todas las tareas
+    if(taskList.childElementCount === 0){
+        $('#clearBtn').hide(200);
+    }
 }
 
 
@@ -71,5 +82,10 @@ function clearTasks(){
         while(taskList.firstChild){
             taskList.removeChild(taskList.firstChild);
         }
+    }
+
+    // si es la ultima tarea, oculto el boton de eliminar todas las tareas
+    if(taskList.childElementCount === 0){
+        $('#clearBtn').hide(200);
     }
 }
